@@ -1,0 +1,49 @@
+# Kconfig - HCSR04 Distance Measurement Sensor Configuration Options
+
+
+menuconfig HCSR04 
+	bool "HCSR04 Distance Measurement Sensor"
+	depends on GPIO
+	help
+		Enable driver for HCSR04 distance measurement sensor
+
+if HCSR04
+
+config HCSR0_NAME
+	string "Driver name"
+	default "HCSR0"
+	help
+	  Device name with which the HCSR04 sensor is identified.
+
+config HCSR1_NAME
+	string "Driver name"
+	default "HCSR1"
+	help
+	  Device name with which the MPU6050 sensor is identified.
+
+config HCSR0_ECHO
+	int "Echo pin for HCSR0 sensor"
+	default 3
+	help
+		Echo pin used for HCSR0 sensor.
+
+
+config HCSR0_TRIG
+	int "Trigger pin for HCSR0 sensor"
+	default 1
+	help
+		Trigger pin used for HCSR1 sensor.
+
+config HCSR1_ECHO
+	int "Echo pin for HCSR1 sensor"
+	default 12
+	help
+		Echo pin used for HCSR1 sensor.
+
+config HCSR1_TRIG
+	int "Trigger pin for HCSR1 sensor"
+	default 10
+	help
+		Trigger pin used for HCSR1 sensor.
+
+endif #HCSR04
